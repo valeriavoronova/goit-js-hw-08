@@ -15,8 +15,8 @@ var throttle = require('lodash.throttle');
     const onPlay = function(data) {
         
         localStorage.setItem("videoplayer-current-time", JSON.stringify(data.seconds));
-        console.log(data.seconds);
-        
+        //console.log(data.seconds);
+
     }
 
     var throttled = throttle(onPlay, 1000)
