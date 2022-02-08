@@ -12,3 +12,9 @@
 
 // Сделай так, чтобы хранилище обновлялось не чаще чем раз в 500 миллисекунд. 
 // Для этого добавь в проект и используй библиотеку lodash.throttle.
+import throttle from 'lodash.throttle';
+
+const inputEmailRef = document.querySelector("input");
+const textRef = document.querySelector("textarea");
+const submitBtnRef = document.querySelector("button");
+//console.log(submitBtnRef, textRef, inputEmailRef)
