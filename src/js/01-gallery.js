@@ -24,7 +24,7 @@ galleryRef.insertAdjacentHTML("beforeend", items);
 //create event
 galleryRef.addEventListener("click", onImageClick);
 
-var lightbox = new SimpleLightbox('.gallery a');
+var lightbox = new SimpleLightbox('.gallery a', {captionsData: `alt`, captionDelay: 250});
 // import SimpleLightbox from "simplelightbox";
 // Описан в документации
 import SimpleLightbox from 'simplelightbox';
