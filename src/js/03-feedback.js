@@ -20,8 +20,9 @@ const emailInputRef = document.querySelector(".feedback-form input")
 const textRef = document.querySelector(".feedback-form textarea");
 //const submitBtnRef = document.querySelector("button");
 //console.log(formRef, textRef, emailInputRef, )
-textRef.addEventListener("input", throttle(onTextInput, 500));
-emailInputRef.addEventListener("input", throttle(onEmailInput, 500));
+formRef.addEventListener("input", throttle(onTextInput, 500));
+// textRef.addEventListener("input", throttle(onTextInput, 500));
+// emailInputRef.addEventListener("input", throttle(onEmailInput, 500));
 
 formRef.addEventListener("submit", onFormSub);
 
@@ -31,13 +32,13 @@ const STORAGE_DATA = 'feedback-form-state';
 
 recoverData();
 
-function onEmailInput(e){
-    review.email = e.currentTarget.value;
-    localStorage.setItem(STORAGE_DATA, JSON.stringify(review));
-}
+// function onEmailInput(e){
+//     review.email = e.target.value;
+//     localStorage.setItem(STORAGE_DATA, JSON.stringify(review));
+// }
 
 function onTextInput(e){
-    review.message = e.currentTarget.value;
+    review[e.target.name] = e.target.value;
 
     localStorage.setItem(STORAGE_DATA, JSON.stringify(review));
 }
