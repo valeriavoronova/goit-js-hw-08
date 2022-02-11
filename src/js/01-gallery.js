@@ -1,9 +1,9 @@
 //import imgCard from '../templates/gallery-item.hbs'
 // Add imports above this line
-//import { galleryItems } from './gallery-items';
+import { galleryItems } from './gallery-items';
 // Change code below this line
 
-console.log(imgCard);
+//console.log(imgCard);
 const galleryRef = document.querySelector(".gallery");
 // create html
 const items = galleryItems.map(( { preview, original, description } ) => {
