@@ -60,12 +60,7 @@ function onFormSub(e){
 
 function recoverData(){ 
       const savedData = localStorage.getItem(STORAGE_DATA); 
-
-    // if(JSON.parse(savedData)){
-    //     emailInputRef.value = JSON.parse(savedData).email;
-    //     textRef.value = JSON.parse(savedData).message;
-        
-    // }  
+ 
     if(JSON.parse(savedData).email){
         emailInputRef.value = JSON.parse(savedData).email;
     } 
