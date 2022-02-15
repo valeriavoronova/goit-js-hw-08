@@ -10,7 +10,22 @@ const iframe = document.querySelector('iframe');
 
     const player = new Player(iframe);
 
-    player.setCurrentTime(localStorage.getItem("videoplayer-current-time"))
+    // player.setCurrentTime(localStorage.getItem("videoplayer-current-time"))
+
+    player.setCurrentTime(localStorage.getItem("videoplayer-current-time")).then(function(seconds) {
+    console.log(seconds)
+    // seconds = the actual time that the player seeked to
+}).catch(function(error) {
+    switch (error.name) {
+        case 'RangeError':
+            // the time was less than 0 or greater than the video’s duration
+            break;
+
+        default:
+            // some other error occurred
+            break;
+    }
+});
 
     const onPlay = function(data) {
         
@@ -19,7 +34,7 @@ const iframe = document.querySelector('iframe');
 
     }
 
-    var throttled = throttle(onPlay, 1000)
+    const throttled = throttle(onPlay, 1000)
          
     player.on('timeupdate', throttled);
 
