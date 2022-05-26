@@ -30,7 +30,10 @@ const review = {};
 const STORAGE_DATA = 'feedback-form-state';
 // const savedData = localStorage.getItem('feedback-form-state');
 
-recoverData();
+if (localStorage.getItem(STORAGE_DATA)!==null) {
+    recoverData();
+}
+return;
 
 // function onEmailInput(e){
 //     review.email = e.target.value;
@@ -68,5 +71,5 @@ function recoverData(){
         // emailInputRef.value = JSON.parse(savedData).email;
         textRef.value = JSON.parse(savedData).message;
     }
-    
+
 }
