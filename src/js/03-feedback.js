@@ -35,11 +35,6 @@ if (localStorage.getItem(STORAGE_DATA)!==null) {
 }
 return;
 
-// function onEmailInput(e){
-//     review.email = e.target.value;
-//     localStorage.setItem(STORAGE_DATA, JSON.stringify(review));
-// }
-
 function onTextInput(e){
     review[e.target.name] = e.target.value;
 
