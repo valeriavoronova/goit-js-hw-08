@@ -33,7 +33,7 @@ const STORAGE_DATA = 'feedback-form-state';
 if (localStorage.getItem(STORAGE_DATA)!==null) {
     recoverData();
 }
-return;
+//return;
 
 function onTextInput(e){
     review[e.target.name] = e.target.value;
